@@ -34,7 +34,7 @@ mkdir -p ${APPDIR}
 
 cd ${TMPDIR}
 wget -c --quiet http://ftp.us.debian.org/debian/pool/main/u/udev/udev_175-7.2_arm64.deb
-wget -c --quiet http://ftp.us.debian.org/debian/pool/main/s/speech-dispatcher/speech-dispatcher_0.8.8-1_arm64.deb
+wget -c --quiet http://ftp.us.debian.org/debian/pool/main/s/speech-dispatcher/speech-dispatcher_0.8.8-6_arm64.deb
 wget -c --quiet http://ftp.us.debian.org/debian/pool/main/libs/libsdl2/libsdl2-2.0-0_2.0.2%2bdfsg1-6_arm64.deb
 
 cd ${APPDIR}
@@ -50,9 +50,9 @@ cp -L libdirectfb/usr/lib/aarch64-linux-gnu/libfusion-1.2.so.9 ${APPDIR}/usr/lib
 cp -L libdirectfb/usr/lib/aarch64-linux-gnu/libdirect-1.2.so.9 ${APPDIR}/usr/lib/aarch64-linux-gnu/
 
 # copy libts-0.0-0
-wget -c --quiet http://ftp.us.debian.org/debian/pool/main/t/tslib/libts-0.0-0_1.0-11_arm64.deb
+wget -c --quiet http://ftp.us.debian.org/debian/pool/main/t/tslib/libts0_1.16-1_arm64.deb
 mkdir libts
-dpkg -x libts-0.0-0_1.0-11_arm64.deb libts
+dpkg -x libts0_1.16-1_arm64.deb libts
 cp -L libts/usr/lib/aarch64-linux-gnu/libts-0.0.so.0 ${APPDIR}/usr/lib/aarch64-linux-gnu/
 
 # copy QGroundControl release into appimage
@@ -85,6 +85,6 @@ cd ${TMPDIR}
 #wget -c --quiet "https://github.com/probonopd/AppImageKit/releases/download/5/AppImageAssistant" # (ARM 64-bit) Add arm64 when build
 chmod a+x ./AppImageAssistant
 
-./AppImageAssistant ./$APP.AppDir/ ${TMPDIR}/$APP".AppImage"
+appimagetool ./$APP.AppDir/ ${TMPDIR}/$APP".AppImage"
 
 cp ${TMPDIR}/$APP".AppImage" ${OUTPUT_DIR}/$APP".AppImage"
