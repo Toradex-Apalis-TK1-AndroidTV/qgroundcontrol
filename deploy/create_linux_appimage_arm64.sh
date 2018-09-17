@@ -76,7 +76,7 @@ Categories=Utility;
 Keywords=computer;
 EOF
 
-VERSION=$(strings ${APPDIR}/qgroundcontrol | grep '^v[0-9*]\.[0-9*].[0-9*]' | head -n 1)
+VERSION=$(strings ${APPDIR}/QGroundControl | grep '^v[0-9*]\.[0-9*].[0-9*]' | head -n 1)
 echo QGC Version: ${VERSION}
 
 # Go out of AppImage
