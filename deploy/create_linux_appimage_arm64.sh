@@ -50,10 +50,10 @@ cp -L libdirectfb/usr/lib/aarch64-linux-gnu/libfusion-1.2.so.9 ${APPDIR}/usr/lib
 cp -L libdirectfb/usr/lib/aarch64-linux-gnu/libdirect-1.2.so.9 ${APPDIR}/usr/lib/aarch64-linux-gnu/
 
 # copy libts-0.0-0
-wget -c --quiet http://ftp.us.debian.org/debian/pool/main/t/tslib/libts0_1.16-1_arm64.deb
+wget -c --quiet http://ftp.us.debian.org/debian/pool/main/t/tslib/libts0_1.17-1_arm64.deb
 mkdir libts
-dpkg -x libts0_1.16-1_arm64.deb libts
-cp -L libts/usr/lib/aarch64-linux-gnu/libts.so.0.9.1 ${APPDIR}/usr/lib/aarch64-linux-gnu/
+dpkg -x libts0_1.17-1_arm64.deb libts
+cp -L libts/usr/lib/aarch64-linux-gnu/libts.so.0.9.2 ${APPDIR}/usr/lib/aarch64-linux-gnu/
 
 # copy QGroundControl release into appimage
 cp -r ${QGC_RELEASE_DIR}/* ${APPDIR}/
